@@ -1,0 +1,80 @@
+{
+  "name": "@dephub/repo",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "CLI tool to automate GitHub repository creation and Git initialization or publishing workflows.",
+  "bin": {
+    "repo": "./dist/cli.js"
+  },
+  "scripts": {
+    "prepublishOnly": "pnpm lint && pnpm check && pnpm build",
+    "release": "pnpm publish",
+    "docs": "lineo md 'src/**/*.ts' --outFile code.md --outDir temp",
+    "check": "tsc --noEmit --skipLibCheck",
+    "lint": "eslint . --fix --max-warnings 0",
+    "fmt": "prettier --write .",
+    "clean": "rm -rf dist",
+    "build": "vite build",
+    "dev": "vite build -w --mode development"
+  },
+  "keywords": [
+    "cli",
+    "git",
+    "github",
+    "gh",
+    "dephub",
+    "init",
+    "repo",
+    "repository",
+    "workflow",
+    "automation",
+    "developer-tools",
+    "git-push",
+    "git-init"
+  ],
+  "author": {
+    "name": "Estarlin R",
+    "email": "dev@estarlincito.com",
+    "url": "https://estarlincito.com"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/dephub-js/repo#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dephub-js/repo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dephub-js/repo/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "packageManager": "pnpm@10.30.3",
+  "devDependencies": {
+    "@dephub/eslint-ts": "^1.0.5",
+    "@dephub/glob": "^1.0.2",
+    "@types/node": "^26.6.6",
+    "eslint": "^10.14.0",
+    "prettier": "^3.9.10",
+    "typescript": "6.0.3",
+    "vite": "^8.3.5",
+    "vite-plugin-dts": "^5.1.2"
+  },
+  "dependencies": {
+    "@dephub/ask": "^1.0.2",
+    "@dephub/command": "^3.0.0",
+    "@dephub/path": "^2.0.0",
+    "@dephub/read": "^1.0.3",
+    "@dephub/slug": "^1.0.4",
+    "@dephub/table": "^1.0.0",
+    "@dephub/write": "^1.0.3"
+  }
+}
